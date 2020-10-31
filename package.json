@@ -1,8 +1,8 @@
 {
-  "name": "donlalicon.dev",
+  "name": "ben-mayer-blog",
   "version": "1.0.0",
-  "description": "Personal blog of Don Lalicon.",
-  "author": "Don Lalicon",
+  "description": "Ben Mayer. Ideas I've been, thoughts I've thought.",
+  "author": "benmayer",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy": "npm run build && gcloud app deploy --project donlalicon"
+    "deploy": "npm run build && gcloud app deploy"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.0",

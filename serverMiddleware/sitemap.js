@@ -4,7 +4,7 @@ const app = require('./firebase-admin')
 
 export default function (req, res, next) {
   const db = app.firestore()
-  const smStream = new SitemapStream({ hostname: 'https://donlalicon.dev/' })
+  const smStream = new SitemapStream({ hostname: 'https://ben-mayer.com/' })
   const pipeline = smStream.pipe(createGzip())
 
   db.collection('blogs')

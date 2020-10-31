@@ -10,6 +10,7 @@ import Teaser from '~/components/Teaser'
 import LoadingSpinner from '~/components/LoadingSpinner'
 
 export default {
+  middleware: 'anonymous-access',
   components: {
     LoadingSpinner,
     Teaser
@@ -25,10 +26,6 @@ export default {
   },
   async mounted () {
     await this.loadBlogs()
-    window.addEventListener('scroll', this.loadMore)
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.loadMore)
   },
   methods: {
     async loadBlogs () {
@@ -38,6 +35,8 @@ export default {
 
       this.isLoading = true
       const db = this.$firebase.firestore()
+
+      console.log(db)
 
       let query = db.collection('teasers')
         .where('published', '==', true)
@@ -64,20 +63,11 @@ export default {
       }
 
       this.isLoading = false
-    },
-    loadMore () {
-      const elementBounds = this.$el.getBoundingClientRect()
-
-      // Add extra padding to load earlier even before the bottom of the element is in view.
-      const padding = 100
-
-      const bottomOfWindow =
-        elementBounds.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) + padding
-
-      if (bottomOfWindow && !this.isLoading && !this.eof) {
-        this.loadBlogs()
-      }
+    }
+  },
+  head () {
+    return {
+      title: 'Home'
     }
   }
 }

@@ -20,14 +20,14 @@
       <figcaption v-if="blog.imageCaption" class="text-center text-gray-600 text-sm my-2" v-html="blog.imageCaption" />
     </figure>
     <div class="content" v-html="blog.body" />
-    <div class="flex border rounded shadow p-5 text-gray-600 md:w-2/3 mx-auto my-10 items-center">
+<!--     <div class="flex border rounded shadow p-5 text-gray-600 md:w-2/3 mx-auto my-10 items-center">
       <img src="/avatar.jpg" alt="Author" class="h-20 w-20 object-cover rounded-full flex-shrink-0 mr-5">
       <div>
         Hey there! I hope you find this post useful. If you have anything to say about this post,
         questions or feedback, send me a <a href="https://twitter.com/DonHasTweets" target="_blank">tweet</a>
         or an <a href="mailto:dalalicon@gmail.com" target="_blank">email</a>.
       </div>
-    </div>
+    </div> -->
     <div class="clearfix mt-10 text-xs font-semibold uppercase">
       <nuxt-link
         v-if="prev"
